@@ -15,12 +15,69 @@
     <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
       <header>
         <nav class="flex justify-center items-center mt-6">
-          <div class="mt-10 relative flex justify-center items-center w-9/12 mb-10">
-            <img class="w-48 absolute " src="assets/bg.png" alt="" />
+          <div
+            class="mt-10 relative flex justify-center items-center w-9/12 mb-10"
+          >
+            <img class="w-48 absolute" src="assets/bg.png" alt="" />
             <img class="w-16" src="assets/Group.png" alt="" />
           </div>
         </nav>
       </header>
+
+      <!-- Login Section -->
+      <div>
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+              <fieldset class="fieldset">
+                <label class="fieldset-label">Mobile Number</label>
+                <input
+                   value="01923244769"
+                  id="account-number"
+                  type="number"
+                  class="input"
+                  placeholder="Enter Your Number"
+                  required
+                />
+                <label class="fieldset-label">4 Digit Pin</label>
+                <input
+                  value="1234"
+                  id="pin"
+                  type="password"
+                  class="input"
+                  placeholder="Enter 4 Digit Pin"
+                  required
+                />
+                <button id="login-btn" class="btn btn-neutral mt-4">
+                  Login
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <script>
+      document
+        .getElementById("login-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const accountNumber = document.getElementById('account-number').value;
+          const accountPin = document.getElementById('pin').value;
+          if(accountNumber.length === 11){
+            if(accountPin === "1234"){
+              window.location.href = "./main.html"
+            }
+            else{
+              alert("Pin is incorrect");
+            }
+          }
+          else{
+            alert("Need a valid account number")
+          }
+        });
+    </script>
+    <script src="script/login.js"></script>
   </body>
 </html>
