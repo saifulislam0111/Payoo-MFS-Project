@@ -18,7 +18,9 @@
           <div class="flex justify-center items-center gap-5">
             <img class="w-16" src="assets/Group.png" alt="" />
             <div>
-              <h1 class="text-3xl font-bold">$ <span id="main-balance">45000</span></h1>
+              <h1 class="text-3xl font-bold">
+                $ <span id="main-balance">45000</span>
+              </h1>
               <p class="p-1">Available Balance</p>
             </div>
           </div>
@@ -34,23 +36,23 @@
             is low and
           </p>
           <div class="cards grid grid-cols-3 mt-16 gap-2 p-2">
-            <div class="box border p-4 text-center rounded-sm">
+            <div id="add-money-box" class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
               <h3>Add Money</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm">
+            <div id="cashout-box" class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="assets/send1.png" alt="" />
               <h3>Cashout</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm">
+            <div id="transfer-money-box" class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="assets/money1.png" alt="" />
               <h3>Transfer Money</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm">
+            <div id="get-bonus-box" class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="assets/bonus1.png" alt="" />
               <h3>Get Bonus</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm">
+            <div id="pay-bill-box" class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
               <h3>Pay Bill</h3>
             </div>
@@ -59,7 +61,7 @@
               <h3>Transactions</h3>
             </div>
           </div>
-          <section>
+          <section id="add-money">
             <h2>Add Money</h2>
             <div>
               <div class="hero-content flex-col lg:flex-row-reverse">
@@ -113,25 +115,136 @@
               </div>
             </div>
           </section>
+          <section id="cashout">
+            <h2>Cash Out</h2>
+            <div>
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div
+                  class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+                >
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+                      <label class="fieldset-label">Agent Number</label>
+                      <input
+                        value="01923244769"
+                        id="account-number"
+                        type="text"
+                        class="input"
+                        placeholder="Enter 11 digit number"
+                        required
+                      />
+                      <label class="fieldset-label">Amount</label>
+                      <input
+                        id="amount-money"
+                        type="text"
+                        class="input"
+                        placeholder="Add Amount to Withdraw"
+                        required
+                      />
+                      <label class="fieldset-label">Pin Number</label>
+                      <input
+                        value="1234"
+                        id="pin"
+                        type="password"
+                        class="input"
+                        placeholder="Enter 4 Digit Pin Number"
+                        required
+                      />
+                      <button
+                        id="withdraw-money"
+                        class="btn btn-neutral mt-4 bg-blue-700 border-none rounded-3xl"
+                      >
+                        Withdraw Money
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="transfer-money">
+            <h2>Transfer Money</h2>
+            <div>
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div
+                  class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+                >
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+                      <label class="fieldset-label">User Account Number</label>
+                      <input
+                        value="01923244769"
+                        id="account-number"
+                        type="text"
+                        class="input"
+                        placeholder="Enter 11 digit number"
+                        required
+                      />
+                      <label class="fieldset-label">Amount</label>
+                      <input
+                        id="amount-money"
+                        type="text"
+                        class="input"
+                        placeholder="Add Amount to Withdraw"
+                        required
+                      />
+                      <label class="fieldset-label">Pin Number</label>
+                      <input
+                        value="1234"
+                        id="pin"
+                        type="password"
+                        class="input"
+                        placeholder="Enter 4 Digit Pin Number"
+                        required
+                      />
+                      <button
+                        id="withdraw-money"
+                        class="btn btn-neutral mt-4 bg-blue-700 border-none rounded-3xl"
+                      >
+                        Send Now!
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="get-bonus">
+            <h2>Get Bonus</h2>
+            <div>
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div
+                  class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+                >
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+                      <label class="fieldset-label">Enter Bonus Coupon</label>
+                      <input
+                        value="Enter Your Coupon"
+                        type="text"
+                        class="input"
+                        placeholder="Enter 11 digit number"
+                        required
+                      />
+                      <button
+                        id="withdraw-money"
+                        class="btn btn-neutral mt-4 bg-blue-700 border-none rounded-3xl"
+                      >
+                        Get Bonus
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </header>
     </section>
     <script>
-      document.getElementById('add-money')
-       .addEventListener('click', function(event){
-        event.preventDefault();
-        const amount = document.getElementById('amount-money').value;
-        const convertedAmount = parseFloat(amount);
-        const  accountPin = document.getElementById('pin').value;
-        const convertedPin = parseInt(accountPin);
-        const mainBalance = document.getElementById('main-balance').innerText;
-        const convertedMainBalance = parseFloat(mainBalance);
-      if (convertedPin === 1234){
-       const sum = convertedMainBalance + convertedAmount;
-       document.getElementById('main-balance').innerText = sum;
-      }
-       })
+      
     </script>
     <script src="script/addMoney.js"></script>
+    <script src="script/toggle.js"></script>
   </body>
 </html>
