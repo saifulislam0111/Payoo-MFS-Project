@@ -34,7 +34,7 @@
                 <input
                    value="01923244769"
                   id="account-number"
-                  type="number"
+                  type="text"
                   class="input"
                   placeholder="Enter Your Number"
                   required
@@ -48,7 +48,7 @@
                   placeholder="Enter 4 Digit Pin"
                   required
                 />
-                <button id="login-btn" class="btn btn-neutral mt-4">
+                <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-700 border-none rounded-3xl">
                   Login
                 </button>
               </fieldset>
@@ -59,24 +59,7 @@
     </section>
 
     <script>
-      document
-        .getElementById("login-btn")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          const accountNumber = document.getElementById('account-number').value;
-          const accountPin = document.getElementById('pin').value;
-          if(accountNumber.length === 11){
-            if(accountPin === "1234"){
-              window.location.href = "./main.html"
-            }
-            else{
-              alert("Pin is incorrect");
-            }
-          }
-          else{
-            alert("Need a valid account number")
-          }
-        });
+     
     </script>
     <script src="script/login.js"></script>
   </body>
